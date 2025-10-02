@@ -1,4 +1,3 @@
-<!-- resources/js/Pages/EmployeesPage.vue -->
 <template>
   <v-container fluid>
     <v-card class="pa-4">
@@ -55,10 +54,8 @@
     </v-card>
   </v-container>
 
-  <!-- Діалог для створення/редагування -->
   <EmployeeFormDialog v-model="dialog" :employee="editedItem" @save="saveEmployee" />
 
-  <!-- Діалог підтвердження видалення -->
   <v-dialog v-model="deleteConfirmDialog" max-width="500px">
     <v-card>
       <v-card-title class="text-h5">Confirm Delete</v-card-title>
@@ -76,9 +73,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import axios from 'axios';
-import EmployeeFormDialog from '../Components/EmployeeFormDialog.vue'; // Створимо пізніше
+import EmployeeFormDialog from '../Components/EmployeeFormDialog.vue'; 
 
-// Інтерфейс для працівника - *ВИКОРИСТОВУЄ snake_case* для узгодження з вашим бекендом та даними, які ви отримуєте
 interface Employee {
   id: number;
   first_name: string; // <-- snake_case
@@ -89,7 +85,7 @@ interface Employee {
   salary: number;
   hired_at?: string | null; // <-- snake_case (ISO date)
   status: 'active' | 'inactive';
-  updated_at?: string; // <-- snake_case (може бути undefined при створенні)
+  updated_at?: string; // <-- snake_case 
 }
 
 const employees = ref<Employee[]>([]);
@@ -99,7 +95,6 @@ const itemsPerPage = ref(10);
 const search = ref('');
 const selectedEmployees = ref([]);
 
-// Налаштування заголовків таблиці - вже було коректно для snake_case
 const headers = [
   { title: 'ID', key: 'id', sortable: true },
   { title: 'First Name', key: 'first_name', sortable: true },

@@ -31,7 +31,7 @@ class Employee extends Model
      * @var array<string, string>
      */
     protected $casts = [
-        'hired_at' => 'date', // Для автоматичного перетворення в об'єкт Carbon
-        'salary' => 'float', // Для забезпечення роботи з десятковими числами
+        'hired_at' => 'date', 
+        'salary' => 'float', 
     ];
 }
