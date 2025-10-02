@@ -1,0 +1,10 @@
+// resources/css/settings.scss
+
+// Імпортуйте змінні Vuetify (або інші SASS файли, які ви хочете перевизначити)
+@use 'vuetify/settings' with (
+  $color-pack: false // Вимкнути повний пакет кольорів, якщо не потрібен
+);
+
+// Приклад перевизначення кольору primary
+// $primary: #4CAF50; // Зелений
+// $secondary: #FFC107; // Бурштиновий
